@@ -1,0 +1,288 @@
+/*
+========================================
+    RESET GENERAL
+========================================
+*/
+
+/* 
+    - Elimina los márgenes y rellenos predeterminados de todos los elementos.
+    - Utiliza 'box-sizing: border-box' para que el padding y el borde no afecten el ancho total del elemento.
+    - Aplica una fuente predeterminada (Arial o sans-serif).      
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*
+========================================
+    ESTILO GENERAL DEL CUERPO
+========================================
+*/
+
+/*
+    - Establece un fondo gris claro para el cuerpo.
+    - Define el color del texto en un tono oscuro para mejor legibilidad.
+    - Configura el espaciado entre líneas para mejorar la lectura del contenido.
+*/
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+========================================
+    ENCABEZADO (HEADER)
+========================================
+*/
+
+/*
+    - Agregar un fondo azul al encabezado.
+    - El texto se muestra en color blanco para generar contraste.
+    - Se aplica un relleno vertical de 20px y se centra el texto.
+*/
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Ajustes para la imagen del logo */
+.logo {
+    position: absolute;
+    top: 17%; /* Posiciona el logo en la parte superior del encabezado */
+    right:5%; 
+    transform: translateX(-1300%); /* Centra el logo en la parte superior del encabezado */
+    height: 80px; /* Ajusta el tamaño del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 30%; /* Ajusta el radio del círculo de la imagen */
+}
+
+/*
+    - Añade un pequeño margen inferior al título principal para separar del menú de navegación
+*/
+header h1 {
+    margin-bottom: 10px;
+}   
+
+/*
+========================================
+    NAVEGACIÓN (MENÚ)
+========================================
+*/
+
+/*
+    - Elimina los estilos predeterminados de la lista (puntos).
+    - Quita el relleno interno del '<ul>'.
+*/
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* 
+    - Muestra los elementos del menú en línea (horizontalmente).
+    - Agregar un margen entre los elementos para separarlos.
+*/
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/*
+    - Establece un color blanco para los enlaces del menú.
+    - Elimina el subrayado predeterminado.
+    - Aplica negrita para destacar los enlaces.
+    - Agrega una transición suave al cambiar el color en el hover.
+*/
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/*
+    - Cambia el color del enlace cuando el usuario pasa el cursor sobre él.
+*/
+nav ul li a:hover {
+    color: #00ff6a;
+}
+
+/*
+========================================
+    CONTENIDO PRINCIPAL 
+========================================
+*/
+
+/* 
+    - Defina un ancho del 80% del viewport para el contenido principal.
+    - Centra el contenido con 'marging: auto'.
+    - Aplica un fondo blanco y un padding interno para mejorar la legibilidad.
+    - Agregar esquinas redondeadas y una sombra para destacar el contenido.
+*/
+main {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/*
+========================================
+    SECCIONES DEL CONTENIDO
+========================================
+*/
+
+/*
+    - Agrega un margen infrior para separar las secciones.
+    - Aplica un padding interno y una línea divisoria inferiro para separar visualmetne el contenido.
+*/
+section {
+    margin-bottom: 20px;
+    padding: 14px;
+    border-bottom: 2px solid #ddd;
+}
+
+/*
+    - Cmabia el color de los títulos de sección de azul para destacar.
+    - Agrega un pequeño margen inferior para separarlos del contenido.
+*/
+section h2 {
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+/*
+========================================
+    LISTA DE SERVICIOS
+========================================
+*/
+
+/*
+    - Usa un estilo de lista con cuadors en lugar de círculos.
+    - Agrega un margen a la izquierda para mejorar la alineación visual.
+*/
+section ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+/*
+========================================
+    FORMULARIO DE CONTACTO EN 2 COLUMNAS
+========================================
+*/
+
+/*
+    - Usa flexbox para organizar el formulario en dos columnas.
+    - 'flex-wrap: wrap' permite que los elementos se ajusten en pantallas pequeñas.
+    - 'gap: 15px' agregar un espacio entre los compos.
+*/
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/*
+    - Cada campo la mitad del ancho disponible ('50%').
+    - 'calc (50% - 15px)' se usa para dejar espacio entre las columnas.
+    - 'flex-direction: colum' organiza cada grupo en una estructura vertical.
+*/
+.form-group {
+    flex: 1 1 calc(50% - 15px);
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    - Agrega un margen inferior a los elementos de entrada para separarlos.
+*/
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+/*
+    - Hace que los textos de las etiquetas sea más visibles al ponerlos en negrilla.
+*/
+form label {
+    font-weight: bold;
+}
+
+/*
+    - Defina una altura fija para el área de texto.
+    - Hace que ocupen tod el ancho del contenedor.
+    - Aplica un padding interno y bordes redondeados.
+*/
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*
+    - Defina una altura fija para el área de texto.
+    - Permite que el usuario ajuste la altura con 'resize: vertical'.
+*/
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/*
+    - Estilos del botón de envío.
+    - Usa un fondo azul con texto blanco y bordes redondeados.
+    - Agrega una animación de transición en el color de fondo.
+    - Centra el botón dentro de la fila completa.
+*/
+.form-actions {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+
+/*
+========================================
+    PIE DE PÁGINA (FOOTER)
+========================================
+*/
+
+/*
+    - Aplica un fondo oscuro y texto en color blanco.
+    - Centra el texto y agrega un relleno vertical.
+    - Separa visualmente el pie de página del contenido principal.
+*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
